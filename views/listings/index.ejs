@@ -21,7 +21,7 @@
     <div class="card-body">
       <p class="card-text">
           <%= listing.title %> <br>
-          &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+          <%= listing.price ? listing.price.toLocaleString("en-IN") : "No Price" %>
       </p>
     </div>
   </div>
