@@ -4,7 +4,7 @@
     <div class="col-md-6 offset-md-3 mt-3">
         <br>
         <h1>Create a new Listing</h1>
-        <form method="POST" action="/listings">
+        <form method="POST" action="/listings" novalidate class="needs-validation">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input
@@ -12,14 +12,18 @@
                     placeholder="Add a catchy title"
                     type="text"
                     class="form-control"
+                    requried
                 />
+                <div class="valid-feedback">Title looks good</div>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea 
                     name = "listing[description]" 
                     class="form-control"
+                    required
                 ></textarea>
+                <div class = "invalid-feedback">Please enter a short description</div>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL/Link</label>
@@ -28,6 +32,7 @@
                     placeholder="Enter image URL/Link"
                     type="text"
                     class="form-control"
+                    required
                 />
             </div>
 
@@ -37,9 +42,10 @@
                     <input
                         name="listing[price]"
                         placeholder="1200"
-                        type="number"
                         class="form-control"
+                        required
                     />
+                    <div class = "invalid-feedback">Please enter a valid price</div>
                 </div>
                 <div class="mb-3 col-md-8">
                     <label for="country" class="form-label">Country</label>
@@ -48,7 +54,9 @@
                         placeholder="India"
                         type="text"
                         class="form-control"
+                        required
                     />
+                    <div class = "invalid-feedback">Location should be valid</div>
                 </div>
             </div>
             
@@ -59,10 +67,13 @@
                     placeholder="Jaipur, Rajasthan"
                     type="text"
                     class="form-control"
+                    required
                 />
             </div>
             <button type = "submit" class = "btn btn-dark add-btn mt-3">Add</button>
             <br><br>
+        <script src="/js/script.js"></script>
+
         </form>
     </div>
 </div>
